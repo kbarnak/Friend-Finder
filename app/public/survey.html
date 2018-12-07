@@ -188,3 +188,45 @@
 </body>
 
 </html>
+<script type="text/javascript">
+    // jQuery code to initialize the function to grab the values of the form 
+    // Check the validity of the form 
+
+    $("#submit").on("click", function (event) {
+        event.preventDefault();
+        function checkForm() {
+            let formFilled = true;
+            $(".valid").each(function () {
+                if ($(this).val() === '') {
+                    formFilled = false;
+                }
+            });
+            return formFilled;
+        }
+        if (checkForm() === true) {
+
+            let newFriend = {
+                name: $("#name").val().trim(),
+                photo: $("#photo").val().trim(),
+                scores: [
+                    $("#question1").val(),
+                    $("#question2").val(),
+                    $("#question3").val(),
+                    $("#question4").val(),
+                    $("#question5").val(),
+                    $("#question6").val(),
+                    $("#question7").val(),
+                    $("#question8").val(),
+                    $("#question9").val(),
+                    $("#question10").val()
+                ]
+            };
+        };
+    });
+//AJAX call to the friends.js API
+//Use a POST to grab the info from friends.js and SAVE it  to the friends.js
+ //Run Model at the end
+ //use an if/then statement to tell the model to only appear once survey is complete
+
+
+</script>
